@@ -1,1 +1,1 @@
-UPLOAD_FOLDER = 'D:\\flask_file_copy'
+UPLOAD_FOLDER = 'C:\\Users\\shreedhar\\Desktop\\AI_Project'

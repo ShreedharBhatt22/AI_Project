@@ -8,8 +8,9 @@ ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif','docx'])
 app = Flask(__name__)
 app.secret_key = "secret key"
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
-app.config['UPLOAD_FOLDER'] = cnst.UPLOAD_FOLDER
+app.config['UPLOAD_FOLDER'] = "C:\\Users\\shreedhar\\Desktop\\AI_Project"
 
+print(app.config['UPLOAD_FOLDER'])
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 

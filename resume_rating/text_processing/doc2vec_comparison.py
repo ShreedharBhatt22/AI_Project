@@ -2,6 +2,7 @@ import gensim
 from gensim.models.doc2vec import TaggedDocument
 from gensim.parsing.preprocessing import remove_stopwords
 from preprocessing import nltk_tokenizer as nl_token
+doc2vec_scores = []
 
 def get_doc2vec_similarity(req_doc,list_of_resume):
     train_corpus = list(read_corpus(list_of_resume))
@@ -12,9 +13,14 @@ def get_doc2vec_similarity(req_doc,list_of_resume):
     model.train(train_corpus, total_examples=model.corpus_count, epochs=model.epochs)
     inferred_vector = model.infer_vector(test_corpus[0])
     sims = model.docvecs.most_similar([inferred_vector], topn=len(model.docvecs))
+    doc2vec_scores.append(sims)
+    print_accuracy()
     #print(sims)
     return sims
 
+def print_accuracy():
+    acc=performance_report(0.92, doc2vec_scores)
+    print(acc)
 
 
 def read_corpus(doc_corpus,tokens_only=False):

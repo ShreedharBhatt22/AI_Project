@@ -2,14 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Results</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+	<link rel = "icon" href = "/static/logo_AI.png"  type = "image/x-icon">
+
+    <style>
+        .h2{
+            font-family: 'Montserrat', sans-serif;
+            font-size: 17;
+        }
+
+        body{
+		background-image:url("/static/bg.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		text-align: center;
+		
+		/* background-size: 100% 200%; */
+		}
+       
+    </style>
 </head>
 <body>
+    
 <div>
-	<table style="border-collapse: collapse;width:500px;margin:auto;background-color:#d6ffff;">
+	<table style="border-collapse: collapse;font-family: 'Montserrat', sans-serif;width:500px;margin:auto;background-color:#E0E5EC;opacity: 75%;">
 		<tr > 
 		<td align="center" colspan="3" >
-		<h4>Resume Ranking according to the percentage match</h4>
+		<h2>Resume Ranking according to the percentage match</h2>
 		</td>
 		</tr>
          {% for item in result %}
@@ -21,5 +42,7 @@
          {% endfor %}
     </table>
 </div>
+
+
 </body>
 </html>
